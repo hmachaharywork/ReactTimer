@@ -2,17 +2,17 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    'script!jquery/dist/jquery.min.js',
+    'script!jquery/dist/jquery.js',
     'script!foundation-sites/dist/js/foundation.min.js',
     './app/app.jsx'
   ],
   externals: {
-    jquery: 'jQuery'
+    jquery: "jQuery"
   },
   plugins:[
     new webpack.ProvidePlugin({
-      '$': 'jquery',
-      'jQuery': 'jquery'
+      "$": "jquery",
+      "jQuery": "jquery"
     })
   ],
   output: {
@@ -26,7 +26,8 @@ module.exports = {
       Nav: 'app/components/Nav.jsx',
       applicationStyles: 'app/styles/app.scss',
       Timer: 'app/components/Timer.jsx',
-      Countdown: 'app/components/Countdown.jsx'
+      Countdown: 'app/components/Countdown.jsx',
+      Clock: 'app/components/Clock.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
