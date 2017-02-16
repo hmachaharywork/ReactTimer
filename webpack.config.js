@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: [
@@ -7,12 +8,12 @@ module.exports = {
     './app/app.jsx'
   ],
   externals: {
-    'jquery': 'jQuery'
+    jquery: 'jQuery'
   },
   plugins:[
     new webpack.ProvidePlugin({
-      'window.jQuery': 'jquery',
-      'window.$': 'jquery'
+      '$': 'jquery',
+      'jQuery': 'jquery'
     })
   ],
   output: {
@@ -43,6 +44,11 @@ module.exports = {
         test:/\.jsx?$/,
         exclude: /(node_modules|bower_components)/
       }
+    ]
+  },
+  sassLoader:{
+    includePaths: [
+      path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   },
   devtool: 'cheap-module-eval-source-map'
